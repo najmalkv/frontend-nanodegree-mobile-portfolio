@@ -498,6 +498,10 @@ function updatePositions() {
   // read scroll position from top of body and update scrollTop variable
   scrollTop = document.body.scrollTop;
 
+  /*  check if the scroll position has changed, this to avoid processing the visual changes
+   *  that need to be made during scroll.
+   */
+
   if(scrollTop != prevScrollTop){
   frame++;
   window.performance.mark("mark_start_frame");
@@ -520,6 +524,8 @@ function updatePositions() {
   //update prevScrollTop with the current scrolltop
   prevScrollTop = scrollTop;
 }
+
+// requestanimation frame from browser to make our visual changes
   requestAnimationFrame(updatePositions);
 }
 
