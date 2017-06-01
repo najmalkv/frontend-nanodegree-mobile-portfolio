@@ -35,17 +35,6 @@ var dist = function(subpath) {
   return !subpath ? DIST : path.join(DIST, subpath);
 };
 
-// Task to get css production ready
-var styleTask = function(stylesPath, srcs) {
-  return gulp.src(srcs.map(function(src) {
-      return path.join('src', stylesPath, src);
-    }))
-    .pipe($.changed(stylesPath, {extension: '.css'}))
-    .pipe(gulp.dest('.tmp/' + stylesPath))
-    .pipe($.minifyCss())
-    .pipe(gulp.dest(dist(stylesPath)))
-    .pipe($.size({title: stylesPath}));
-};
 
 
 // Task to get images production ready
@@ -88,9 +77,15 @@ var optimizeHtmlTask = function(src, dest) {
     }));
 };
 
-// Compile and automatically prefix stylesheets
-gulp.task('styles', function() {
-  return styleTask('css', ['**/*.css']);
+// Task to get css production ready
+gulp.task('styles', function (cb) {
+  pump([
+        gulp.src('src/**/**/*.css'),
+        $.minifyCss(),
+        gulp.dest(dist())
+    ],
+    cb
+  );
 });
 
 // Lint JavaScript
@@ -105,9 +100,9 @@ gulp.task('jshint', function() {
 // Task to get javascript production ready
 gulp.task('compress', function (cb) {
   pump([
-        gulp.src('src/js/*.js'),
+        gulp.src('src/**/**/*.js'),
         $.uglify(),
-        gulp.dest(dist('js'))
+        gulp.dest(dist())
     ],
     cb
   );
@@ -116,7 +111,7 @@ gulp.task('compress', function (cb) {
 
 // Optimize images
 gulp.task('images', function() {
-  return imageOptimizeTask('src/img/*', dist('img'));
+  return imageOptimizeTask(['src/**/**/*.jpg','src/**/**/*.png', 'src/**/**/*.gif','src/**/**/*.svg'], dist());
 });
 
 // Copy all files at the root level (src)
