@@ -13,7 +13,9 @@ npm install
 
 ### How to Run
 
-The project is equipped with a gulp build system. You can follow the below mentioned methods to run the website depending on the build you prefer. Note: `cd` into the root folder on your CLI tool and then run the commands.
+The project is equipped with a gulp build system. You can follow the below mentioned methods to run the website depending on the build you prefer.
+
+ _Note:_ `cd` into the root folder on your CLI tool and then run the commands.
 
 To run the devolopment build with auto reload use the following command:
 ```
