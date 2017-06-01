@@ -3,7 +3,7 @@
 This is my solution to web optimisation project of the frontend nanodegree from Udacity. It consists of the optimizations I have made to the provided source code to meet specifications of the project rubric.
 
 ## Getting Started
----
+
 ### Installation
 To get the project running on your local machine firstly take a clone of this repo onto your local machine. Then `cd` into the root directory on your CLI tool(eg. CMD prompt or Terminal) and then run `npm install`. This will install all the node packages you require to run the project.
 
@@ -12,17 +12,21 @@ To get the project running on your local machine firstly take a clone of this re
 The project is equipped with a gulp build system. You can follow the below mentioned methods to run the website depending on the build you prefer. Note: `cd` into the root folder on your CLI tool and then run the commands.
 
 To run the devolopment build with auto reload use the following command:
-`gulp serve`
+```
+gulp serve
+```
 
 To run the production build use the following command:
-`gulp serve:dist`
+```gulp serve:dist```
 
-## How to Build for production
+### How to Build for production
 
 To get the production build use the following command from the root folder:
 `gulp`
 
 This command will optimize the files and output it to the **dist** folder. Use the contents of this folder for your production hosting.
+
+## LICENSE
 
 MIT License
 
