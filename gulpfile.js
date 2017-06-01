@@ -42,7 +42,7 @@ var imageOptimizeTask = function(src, dest) {
   return gulp.src(src)
     .pipe($.imagemin([
       $.imagemin.gifsicle({interlaced: true}),
-      imageminJpegRecompress({progressive: false, method: 'smallfry', quality: 'low'}),
+      imageminJpegRecompress({progressive: true, method: 'ms-ssim', quality: 'low'}),
       $.imagemin.optipng(),
       $.imagemin.svgo({plugins: [{cleanupIDs: false}]})
     ], {verbose: true}))
