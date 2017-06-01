@@ -7,6 +7,10 @@ This is my solution to web optimisation project of the frontend nanodegree from 
 ### Installation
 To get the project running on your local machine firstly take a clone of this repo onto your local machine. Then `cd` into the root directory on your CLI tool(eg. CMD prompt or Terminal) and then run `npm install`. This will install all the node packages you require to run the project.
 
+```
+npm install
+```
+
 ### How to Run
 
 The project is equipped with a gulp build system. You can follow the below mentioned methods to run the website depending on the build you prefer. Note: `cd` into the root folder on your CLI tool and then run the commands.
@@ -17,12 +21,16 @@ gulp serve
 ```
 
 To run the production build use the following command:
-```gulp serve:dist```
+```
+gulp serve:dist
+```
 
 ### How to Build for production
 
 To get the production build use the following command from the root folder:
-`gulp`
+```
+gulp
+```
 
 This command will optimize the files and output it to the **dist** folder. Use the contents of this folder for your production hosting.
 
