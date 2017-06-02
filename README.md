@@ -1,7 +1,25 @@
 ## Frontend Nanodegree Web Optimization Project - Mobile Portfolio
 
-This is my solution to web optimisation project of the frontend nanodegree from Udacity. It consists of the optimizations I have made to the provided source code to meet specifications of the project rubric.
+This is my solution to web optimisation project of the frontend nanodegree from Udacity. It consists of the optimizations I have made to the provided source code to meet specifications of the project rubric. Below mentioned is a jist of the steps I took to optimise the project.
 
+##### Optimizing the Critical rendering path and acheiving a pagespeed score of greater than 90
+
+* Compressed and minified all the assets(html, css, js & images) using the gulp build system.
+* Removed render blocking css file requests and inlined it to shorten the critical rendering path.
+* Removed the link to web fonts as it wasn't adding much value and it was affecting the critical rendering path.
+* Also made all the requests for analytics scripts `async` to remove its influence on the critical rendering path.
+* Reduced the dimensions of pizzeria.jpg to the largest possible view dimensions since it was too big for any screen.
+
+##### Optimizations made to views/js/main.js to make views/pizza.html render with a consistent frame-rate at 60fps when scrolling.
+
+* Moved the `document.body.scrollTop` , in the `updatePositions` function, outside the for loop to avoid layout thrashing.
+* Used `requestAnimationFrame` instead of the scroll listener on `updatePosition` function.
+* Stored the moving pizza elements into an array as they were created and used it in the `updatePositions` function rather than querying the dom for it.
+
+##### Reduced the time to update the pizza size using the pizza slider on views/pizza.html to under 5ms.
+
+* Removed the `determineDX` function by making the algorithm to detemine the size simpler. This got rid of layout thrashing that was occuring.
+* Saved the random pizza container elements to a variable and reused it instead of querying the dom repeatedly.
 ## Getting Started
 
 ### Installation
