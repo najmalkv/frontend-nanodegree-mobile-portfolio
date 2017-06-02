@@ -13,7 +13,7 @@ This is my solution to web optimisation project of the frontend nanodegree from 
 ##### Optimizations made to views/js/main.js to make views/pizza.html render with a consistent frame-rate at 60fps when scrolling.
 
 * Moved the `document.body.scrollTop` , in the `updatePositions` function, outside the for loop to avoid layout thrashing.
-* Used `requestAnimationFrame` instead of the scroll listener on `updatePosition` function.
+* Used `requestAnimationFrame` instead of the scroll listener on `updatePositions` function.
 * Stored the moving pizza elements into an array as they were created and used it in the `updatePositions` function rather than querying the dom for it.
 
 ##### Reduced the time to update the pizza size using the pizza slider on views/pizza.html to under 5ms.
