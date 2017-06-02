@@ -1,6 +1,6 @@
 ## Frontend Nanodegree Web Optimization Project - Mobile Portfolio
 
-This is my solution to web optimisation project of the frontend nanodegree from Udacity. It consists of the optimizations I have made to the provided source code to meet specifications of the project rubric. Below mentioned is a jist of the steps I took to optimise the project.
+This is my solution to web optimisation project of the frontend nanodegree from Udacity. It consists of the optimizations I have made to the provided source code to meet specifications of the project rubric. Below mentioned is a gist of the steps I took to optimize the project.
 
 ##### Optimizing the Critical rendering path and acheiving a pagespeed score of greater than 90
 
